@@ -14,7 +14,7 @@ $(java -jar jenkins.war) &
 
 sudo echo -e "192.168.33.11	jenkins" >> /etc/hosts
 
-sudo sed -i '/^        location \/ {/a proxy_pass          http:\/\/192.168.33.11:8080;/' /etc/nginx/nginx.conf
+sudo sed -i.back '/^        location/a \ proxy_pass http://192.168.33.11:8080;' /etc/nginx/nginx.conf
 
 
 SCRIPT
